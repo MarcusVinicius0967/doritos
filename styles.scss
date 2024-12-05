@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Jaro:opsz@6..72&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+$preto: #000000;
+$linear: linear-gradient(to left, #ff0000, #ff5b00, #ff8800, #ffae00, #fad100, #f3c208, #eab30f, #e1a515, #bc6c2c, #854030, #452123, #000000);
+@mixin wrap {
+    flex-wrap: wrap;
+}
+@mixin peq{
+    margin-left: 35px;
+}
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.all{
+    background-image: $linear;
+}
+.cabecalho{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+    .linha{
+        border-top: 2px solid $preto;
+        width: 80%;
+    }
+    ul{
+        display: inline-flex;
+        gap: 50px;
+        list-style-type: none;
+        margin-top: 10px;
+        a{
+            text-decoration: none;
+            color: $preto;
+            font-weight: 700;
+            font-family: 'Montserrat', sans-serif;
+        }
+    }
+}
+.home{
+    max-width: 1024px;
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 40px;
+    .things{
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        .texto{
+            max-width: 464px;
+            font-size: 46px;
+            font-weight: 700;
+            font-family: 'Montserrat', sans-serif;
+        }
+        .buton{
+            border: solid 3px #000000;
+            text-align: center;
+            border-radius: 10px;
+            padding: 15px;
+            text-decoration: none;
+            font-weight: 700;
+            font-family: 'Montserrat', sans-serif;
+            color: #000000;
+            margin-right: 100px;
+        }.buton:hover{
+            background-color: aqua;
+            transition: 0.7s;
+        }
+    }
+}
+.content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 1024px;
+    width: 100%;
+    margin: 0 auto;
+    gap: 90px;
+    .text{
+        font-size: 46px;
+        font-weight: 700;
+        font-family: 'Montserrat', sans-serif;
+    }
+    .ppp{
+        font-size: 22px;
+        font-weight: 700;
+        font-family: 'Montserrat', sans-serif;
+        margin-top: 20px;
+    }
+}
+.bottom{
+    text-align: center;
+    background-color: darkmagenta;
+    padding: 30px 0;
+    font-family: "Jaro", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 200;
+    font-style: normal;
+    .t{
+        background:  linear-gradient(90deg, #00DBDE 0%, #FC00FF 100%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+}
+@media (max-width: 650px){
+    .home{
+        @include wrap;
+        .buton{
+            margin-bottom: 20px;
+        }
+    }
+    .content{
+        @include wrap;
+        .text , .ppp{
+            @include peq;
+        }.ppp{
+            margin-bottom: 30px;
+        }
+    }
+}
